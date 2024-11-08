@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: password
+  host: db
+
+development:
+  <<: *default
+  database: chatroom_development
+
+test:
+  <<: *default
+  database: chatroom_test
+
+production:
+  <<: *default
+  database: chatroom_production
+  username: chatroom
+  password: <%= ENV['CHATROOM_DATABASE_PASSWORD'] %>
