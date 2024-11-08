@@ -89,6 +89,8 @@ Rails.application.configure do
   config.active_record.attributes_for_inspect = [ :id ]
 
   # Enable DNS rebinding protection and other `Host` header attacks.
+  config.hosts.clear
+
   config.hosts = [
     "testrails.richardosinulingga.site",
      ".richardosinulingga.site"
