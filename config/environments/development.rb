@@ -37,6 +37,10 @@ Rails.application.configure do
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.
   config.action_mailer.perform_caching = false
+  config.hosts << "localhost"       # Untuk mengizinkan localhost
+  config.hosts << "0.0.0.0"         # Untuk mengizinkan akses dari IP 0.0.0.0 (akses dari luar container)
+  config.hosts << "testrails.richardosinulingga.site"    # Jika ingin mengizinkan nama domain tertentu
+
 
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
