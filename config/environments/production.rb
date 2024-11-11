@@ -89,9 +89,11 @@ Rails.application.configure do
   config.active_record.attributes_for_inspect = [ :id ]
 
   # Enable DNS rebinding protection and other `Host` header attacks.
-  config.hosts.clear
+  config.ssl_options = { redirect: { exclude: ->(request) { request.path == "/up" } } }
+
 
   config.hosts = [
+
     "testrails.richardosinulingga.site",
      ".richardosinulingga.site",
      "35.188.181.110"
